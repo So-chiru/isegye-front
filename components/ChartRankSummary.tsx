@@ -35,7 +35,7 @@ export const ChartRankSummary = ({ data }: ChartRankSummaryProps) => {
 
   return (
     <>
-      <h1>실시간 차트 (2분 반영)</h1>
+      <h2>실시간 100 차트 <span className={styles.small}>(2분마다 갱신, 업데이트는 1시간)</span></h2>
 
       <div className={styles.grid}>
         {data &&
@@ -52,7 +52,7 @@ export const ChartRankSummary = ({ data }: ChartRankSummaryProps) => {
                     key={`top-${a.id}`}
                     className={styles.card}
                   >
-                    <h2>{ProvidersName[v] || v} &rarr;</h2>
+                    <h2>{a.cname || ProvidersName[v] || v} &rarr;</h2>
                     <p>
                       {a.title} <br></br>
                       <span className={styles.rank}>
@@ -68,7 +68,7 @@ export const ChartRankSummary = ({ data }: ChartRankSummaryProps) => {
 
       <br></br>
 
-      <h1>일간 차트 (1시간 반영)</h1>
+      <h2>데일리 차트 <span className={styles.small}>(1시간마다 갱신)</span></h2>
 
       <div className={styles.grid}>
         {data &&
@@ -86,7 +86,7 @@ export const ChartRankSummary = ({ data }: ChartRankSummaryProps) => {
                     key={`top-${a.id}`}
                     className={styles.card}
                   >
-                    <h2>{ProvidersName[v] || v} &rarr;</h2>
+                    <h2>{a.cname || ProvidersName[v] || v} &rarr;</h2>
                     <br></br>
                     <p>
                       {a.title}{' '}
