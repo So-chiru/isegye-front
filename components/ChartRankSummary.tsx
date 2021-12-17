@@ -17,6 +17,19 @@ const ProvidersName: { [index: string]: string } = {
   applemusic: 'Apple Music',
 }
 
+const ProvidersLink: { [index: string]: string } = {
+  'bugs.r': 'https://music.bugs.co.kr/chart/track/realtime/total',
+  'bugs.d': 'https://music.bugs.co.kr/chart/track/day/total',
+  'melon.r': 'https://www.melon.com/chart/index.htm',
+  'melon.d': 'https://www.melon.com/chart/day/index.htm',
+  'vibe.r': 'https://vibe.naver.com/chart/total',
+  'vibe.d': 'https://vibe.naver.com/chart/total',
+  'applemusic.r': 'https://music.apple.com/kr/playlist/%EC%98%A4%EB%8A%98%EC%9D%98-top-100-%EA%B8%80%EB%A1%9C%EB%B2%8C/pl.d25f5d1181894928af76c85c967f8f31',
+  'applemusic.d': 'https://music.apple.com/kr/playlist/%EC%98%A4%EB%8A%98%EC%9D%98-top-100-%EA%B8%80%EB%A1%9C%EB%B2%8C/pl.d25f5d1181894928af76c85c967f8f31',
+  'flo.r': 'https://www.music-flo.com/browse?chartId=1',
+  'flo.d': 'https://www.music-flo.com/browse?chartId=1',
+}
+
 export const ChartRankSummary = ({ data }: ChartRankSummaryProps) => {
   console.log(data)
 
@@ -35,7 +48,7 @@ export const ChartRankSummary = ({ data }: ChartRankSummaryProps) => {
               <>
                 {d.map(a => (
                   <a
-                    href='https://www.melon.com/chart/'
+                    href={ProvidersLink[v + '.r']}
                     key={`top-${a.id}`}
                     className={styles.card}
                   >
@@ -69,7 +82,7 @@ export const ChartRankSummary = ({ data }: ChartRankSummaryProps) => {
               <>
                 {d.map(a => (
                   <a
-                    href='https://www.melon.com/chart/'
+                    href={ProvidersLink[v + '.d']}
                     key={`top-${a.id}`}
                     className={styles.card}
                   >
