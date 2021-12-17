@@ -1,0 +1,20 @@
+.links {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-weight: 300;
+}
+
+.links a {
+  height: 36px;
+}
+
+.links a h2 {
+  font-weight: 300;
+}
+
+.links a:hover,
+.links a:focus,
+.links a:active {
+  color: #0070f3;
+}
